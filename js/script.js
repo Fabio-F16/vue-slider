@@ -33,5 +33,23 @@ const app = new Vue({
     data: {
         slides,
         currentSlideIndex: 0,
+    },
+    methods: {
+        showPrevThumb() {
+            if (this.currentSlideIndex > 0) {
+                this.currentSlideIndex--;
+            } else {
+                this.currentSlideIndex = this.slides.length - 1
+            }
+        },
+        showNextThumb() {
+            if (this.currentSlideIndex < slides.length - 1) {
+                this.currentSlideIndex++;
+            } else {
+                this.currentSlideIndex = 0;
+            }
+        },
+
     }
+
 });
