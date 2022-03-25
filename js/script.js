@@ -49,7 +49,16 @@ const app = new Vue({
                 this.currentSlideIndex = 0;
             }
         },
+        imgTimer() {
+            const timer = setInterval(() => {
+                this.currentSlideIndex++;
 
+                if (this.currentSlideIndex === slides.length - 1) {
+
+                    clearInterval(timer);
+                }
+            }, 1000)
+        }
     }
 
 });
