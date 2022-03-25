@@ -16,10 +16,11 @@
     <div id="app">
 
         <div class="container">
-            <div @click="imgTimer" class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="slides[currentSlideIndex].image" alt="slides[currentSlideIndex].title" />
+                    <img @mouseover="imgTimer" :src="slides[currentSlideIndex].image"
+                        alt="slides[currentSlideIndex].title" />
                     <div class="text">
                         <h3>{{slides[currentSlideIndex].title}}</h3>
                         <p>{{slides[currentSlideIndex].text}}</p>

@@ -51,10 +51,11 @@ const app = new Vue({
         },
         imgTimer() {
             const timer = setInterval(() => {
-                this.currentSlideIndex++;
 
-                if (this.currentSlideIndex === slides.length - 1) {
+                if (this.currentSlideIndex < slides.length - 1) {
+                    this.currentSlideIndex++;
 
+                } else {
                     clearInterval(timer);
                 }
             }, 1000)
