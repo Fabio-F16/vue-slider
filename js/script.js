@@ -51,15 +51,30 @@ const app = new Vue({
         },
         imgTimer() {
             const timer = setInterval(() => {
+                this.currentSlideIndex++;
 
-                if (this.currentSlideIndex < slides.length - 1) {
-                    this.currentSlideIndex++;
-
-                } else {
+                if (this.currentSlideIndex === slides.length) {
                     clearInterval(timer);
+                    this.currentSlideIndex = 0;
                 }
+
             }, 1000)
-        }
+        },
+        addActive(item) {
+
+            const index = this.slides.findIndex(
+                (slide) => slide.title === item.title
+            )
+
+            if (index === this.currentSlideIndex) {
+
+                return 'thumb active';
+
+            } else {
+
+                return 'thumb';
+            }
+        },
     }
 
 });
